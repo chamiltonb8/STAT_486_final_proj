@@ -1,0 +1,12 @@
+[project]
+name = "stat-486-final-proj"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "matplotlib>=3.10.8",
+    "pandas>=3.0.1",
+    "scikit-learn>=1.8.0",
+]
