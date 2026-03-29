@@ -13,6 +13,8 @@ This data is freely available and does not present any legal or ethical challeng
 
 ## Data Description and Preprocessing
 
+Code for this report can be found [here](https://github.com/chamiltonb8/STAT_486_final_proj/blob/main/data_cleaning.ipynb).
+
 As a relational database, this dataset requires lots of joins to extract certain information. With our preprocessing, we ensured that each column was its intended type (i.e. date, numeric, etc.). For the sake of EDA, we merged `movies` and `tags` with the `ratings` table.
 
 Then, we split each genre into lists (as multiple genres are included on each movie). We then generated a list of dummy variables based on which genres applied to each movie.
