@@ -28,7 +28,7 @@ In the end, our dataframe contained:
 - tag_timestamp
 - genre
 
-## Summary statistics and correlation matrix (if applicable)
+## Summary statistics
 
 Overall, our data contains 100836 ratings and 3683 tags across 9742 movies. 
 
