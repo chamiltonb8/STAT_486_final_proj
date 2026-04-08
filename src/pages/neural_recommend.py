@@ -6,6 +6,8 @@ import torch
 import pickle
 from neural_predict import MovieRecommenderEmb, predict_top_movies
 
+from utils import load_csv
+
 # -----------------------------
 # LOAD MODEL + DATA FUNCTION
 # -----------------------------
@@ -19,10 +21,10 @@ def load_model():
     DATA_DIR = os.path.join(ROOT_DIR, "data")  # <-- data folder is outside src
 
     # Full ratings dataset (for user filtering, popularity, etc.)
-    df = pd.read_csv(os.path.join(DATA_DIR, "joined_with_tt_scores.csv"))
+    df = load_csv("data/joined_with_tt_scores.csv")
 
     # Movie features dataset (only features used for prediction)
-    movies_df = pd.read_csv(os.path.join(MODEL_DIR, "movie_features.csv"))
+    movies_df = load_csv("data/movie_features.csv")
 
     # Feature columns for model
     feature_cols = [col for col in movies_df.columns]  # all columns in movies_df

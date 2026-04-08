@@ -8,14 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import f1_score
-
-# ----------------------------------
-# PATH SETUP (important for deployment)
-# ----------------------------------
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
-
-def load_csv(path):
-    return pd.read_csv(os.path.join(BASE_DIR, path))
+from utils import load_csv
 
 
 # ----------------------------------

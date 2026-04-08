@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from utils import load_csv
 
 st.set_page_config(page_title="UMAP Visualization", layout="wide")
 
 st.title("🧠 UMAP Movie Embeddings")
 
-df = pd.read_csv("data/umap.csv")
+df = load_csv("data/umap.csv")
 
 movie_selection = st.selectbox("Highlight this movie:", df["title"], index=1)
 
