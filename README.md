@@ -8,6 +8,16 @@ Take a look at the [Streamlit App](https://stat486finalproj.streamlit.app/UMAP_v
 
 This repository contains the code, data, experiments, and documentation for a movie recommender system built with both classical and neural methods. The goal is to analyze movie-rating data, build embeddings, and provide interactive recommendations via a Streamlit app.
 
+## Runtime Order
+
+1. `data_cleaning.ipynb`
+
+2. `two_towers_setup.py`
+
+3. `tt_validation.ipynb` (to view a t-SNE plot of the data)
+
+4. All other notebooks
+
 ## Repository Structure
 
 - `data/`
