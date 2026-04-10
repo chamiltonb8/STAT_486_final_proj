@@ -105,7 +105,7 @@ This metric directly reflects recommendation quality.
 |------|------|--------------------|------------------|--------|------|
 | Logistic Regression | Classification | Default | 80/20 split | F1 | 0.684 |
 | KNN | Classification | \(k\) tuned (5–20) | 80/20 + CV | F1 | 0.679 |
-| Neural Network | Regression → Classification | lr = 5e-4, embed_dim = 32, dropout = 0.2 | 80/20 split | F1 | **0.8973** |
+| Neural Network | Regression → Classification | lr = 5e-4, embed_dim = 32, dropout = 0.2 | 80/20 split | F1 | **0.8965** |
 | Logistic Regression (No TT) | Classification | Default | 80/20 split | F1 | 0.520 |
 
 ---
@@ -117,7 +117,7 @@ This metric directly reflects recommendation quality.
 Several key trends emerge:
 
 - Logistic regression and KNN perform similarly (F1 ≈ 0.68), indicating that both linear and local methods capture some structure but are limited in flexibility.
-- The neural network significantly outperforms both models (F1 = 0.8973), demonstrating its ability to capture **nonlinear and personalized interactions**.
+- The neural network significantly outperforms both models (F1 = 0.8965), demonstrating its ability to capture **nonlinear and personalized interactions**.
 - Removing the Two Towers score from logistic regression reduces performance from **0.684 to 0.520**, confirming its importance.
 
 ### Selected Model
