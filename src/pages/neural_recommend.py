@@ -64,6 +64,14 @@ model, scaler, movie2idx, movies_df, feature_cols, df = load_model()
 user_ids = df['userId'].unique()
 selected_user = st.selectbox("Select a user:", user_ids)
 
+# Slider for number of recommendations
+num_recs = st.slider(
+    "How many movies do you want recommended?",
+    min_value=1,
+    max_value=20,
+    value=10  # default
+)
+
 # Recommendation button
 if st.button("Get Recommendations"):
     top_movies = predict_top_movies(
@@ -74,7 +82,7 @@ if st.button("Get Recommendations"):
         model=model,
         scaler=scaler,
         movie2idx=movie2idx,
-        top_n=10,
+        top_n=num_recs,
         min_rating=3.5,
         random_seed=42,
         top_pool_factor=3,
