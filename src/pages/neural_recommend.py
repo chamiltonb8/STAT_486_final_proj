@@ -6,6 +6,8 @@ import torch
 import pickle
 from neural_predict import MovieRecommenderEmb, predict_top_movies
 
+from utils import load_csv
+
 # -----------------------------
 # LOAD MODEL + DATA FUNCTION
 # -----------------------------

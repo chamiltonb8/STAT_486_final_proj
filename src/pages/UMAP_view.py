@@ -1,12 +1,15 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from utils import load_csv
 
 st.set_page_config(page_title="UMAP Visualization", layout="wide")
 
 st.title("🧠 UMAP Movie Embeddings")
 
-df = pd.read_csv("data/umap.csv")
+df = load_csv("data/umap.csv")
+
+st.markdown("Using a Two-Towers model, we placed movies in a 32D space based on the relationships between them and the users that rated them. The plot below is a 2D representation of each movie created using UMAP.")
 
 movie_selection = st.selectbox("Highlight this movie:", df["title"], index=1)
 
