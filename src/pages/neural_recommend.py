@@ -55,6 +55,7 @@ def load_model():
 # -----------------------------
 st.set_page_config(page_title="Neural Movie Recommender", layout="wide")
 st.title("🎬 Neural Movie Recommendation System")
+st.text("Note: This page may not work as hosted on Streamlit. Run the app locally if you would like to use this tab!")
 
 # Load everything
 model, scaler, movie2idx, movies_df, feature_cols, df = load_model()
