@@ -1,6 +1,6 @@
 # STAT_486_final_proj
 
-A movie recommendation project that combines exploratory data analysis, unsupervised learning, and neural recommendation models.
+A movie recommendation project that combines exploratory data analysis, a recommender system, and supervised modeling.
 
 Take a look at the [Streamlit App](https://stat486finalproj.streamlit.app/UMAP_view) that we built for this project!
 
@@ -21,6 +21,7 @@ This repository contains the code, data, experiments, and documentation for a mo
 ## Repository Structure
 
 - `data/`
+  - `README.md`: data documentation and notes for the dataset files.
   - `joined_df.csv`: main dataset combining ratings, movie metadata, and features.
   - `joined_with_tt_scores.csv`: dataset augmented with two-tower model scores.
   - `movie_vectors.csv`: saved movie embedding vectors from the two-tower approach.
@@ -29,18 +30,22 @@ This repository contains the code, data, experiments, and documentation for a mo
   - `umap.csv`, `tsne.csv`: dimension reduction outputs for visualization.
 
 - `progress/`
-  - Weekly updates and project notes.
-  - `01_proposal.md`, `02_eda.md`, `03_unsupervised.md`
+  - Weekly updates, project notes, and final write-up materials.
+  - `01_proposal.md`, `02_eda.md`, `03_unsupervised.md`, `04_supervised.md`
+  - `486 Project.pdf`: finalized project slides.
 
 - `src/`
   - `streamlit_app.py`: main Streamlit launcher for the interactive recommender.
   - `two_towers_setup.py`: builds and trains a user/movie two-tower model and exports movie embeddings.
   - `neural_predict.py`: PyTorch-based recommender architecture and top-movie prediction helper.
-  - `supervised.py`: placeholder for supervised modeling code.
+  - `utils.py`: helper functions used across scripts and notebooks.
   - `pages/`: Streamlit app pages for navigation and visualization.
 
-- `models/`
-  - Saved model files and weights for prediction and embedding reuse.
+- `src/models/`
+  - Saved model and preprocessing artifacts for prediction and embedding reuse.
+  - `movie_model.pt`, `movie_model_state.pt`, `movie_model_weights.pt`
+  - `movie_tower.keras`, `user_tower.keras`
+  - `movie_features.csv`, `movie2idx.pkl`, `scaler.pkl`
 
 - `notebooks/`
   - Analysis notebooks covering data cleaning, KNN, neural networks, and validation.
@@ -93,7 +98,7 @@ Contains a PyTorch recommender model and a `predict_top_movies` helper that:
 
 ### `src/streamlit_app.py`
 
-The Streamlit launcher provides a user-facing interface for exploring visualizations and getting movie recommendations.
+The Streamlit app provides a user-facing interface for exploring visualizations and getting movie recommendations.
 
 ## Data Workflow
 
