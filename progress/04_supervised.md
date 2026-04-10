@@ -23,7 +23,7 @@ This combination allows the model to capture both global trends and personalized
 
 ### Validation Strategy and Leakage Prevention
 
-We use an **80/20 train/validation split**, where the validation set consists of unseen user–movie interactions. This ensures that model performance reflects generalization rather than memorization.
+We use a **50/40/10 split of the data** where 50% of the data was used to train the Two Towers model, 40% of the data was used to train the supervised models, and 10% was used to validate the supervised models. Training each model on separate data ensures that embeddings are not memorizing the correct locations for each movie and user.
 
 To prevent data leakage:
 - Movie-level averages are computed using a **leave-one-out strategy**, ensuring that the target observation is not included in its own feature
