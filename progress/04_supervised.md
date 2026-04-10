@@ -4,7 +4,7 @@
 
 The goal of this supervised learning task is to predict whether a user will **like a movie**, using both engineered features and learned representations from the Two Towers model. While movie ratings are originally given on a 1–5 scale, we reformulate the problem as a **binary classification task** to better align with recommendation objectives.
 
-Specifically:
+Specifically: 
 - A movie is classified as **“liked”** if the true rating is **greater than 3**
 - A movie is classified as **“not liked”** if the true rating is **less than or equal to 3**
 
