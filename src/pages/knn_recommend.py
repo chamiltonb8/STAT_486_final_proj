@@ -17,13 +17,14 @@ from utils import load_csv
 @st.cache_resource
 def build_pipeline():
     
-    df = load_csv("data/joined_with_tt_scores.csv") 
-    
+    df = load_csv("data/supervised_split.csv") 
+    df = df.drop(columns=['Unnamed: 0.1', 'Unnamed: 0'])
+
     # -------- DEFINE GENRES --------
     exclude_cols = [
         'userId', 'movieId', 'title', 'rating',
         'tag', 'rating_timestamp', 'tag_timestamp',
-        'two_tower_score'
+        'two_tower_score', '(no genres listed)'
     ]
     
     genre_cols = [col for col in df.columns if col not in exclude_cols]
