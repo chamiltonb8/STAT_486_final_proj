@@ -1,0 +1,46 @@
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+from utils import load_csv
+
+st.set_page_config(page_title="UMAP Visualization", layout="wide")
+
+st.title("🧠 UMAP Movie Embeddings")
+
+df = load_csv("data/umap.csv")
+
+st.markdown("Using a Two-Towers model, we placed movies in a 32D space based on the relationships between them and the users that rated them. The plot below is a 2D representation of each movie created using UMAP.")
+
+movie_selection = st.selectbox("Highlight this movie:", df["title"], index=1)
+
+# Background
+bg_df = df[df["title"] != movie_selection]
+
+fig = px.scatter(
+    bg_df,
+    x='x',
+    y='y',
+    color='rating',   # 🔥 color by rating instead of genre
+    hover_data=['title'],
+    opacity=0.4,
+    height=800,
+    title=f"UMAP View — Highlighting: {movie_selection}"
+)
+
+# Highlight selected movie
+selected_df = df[df["title"] == movie_selection]
+
+fig.add_scatter(
+    x=selected_df['x'],
+    y=selected_df['y'],
+    name="Selected Movie",
+    mode='markers',
+    marker=dict(
+        size=18,
+        color='yellow',
+        line=dict(width=2, color='black')
+    ),
+    hovertext=selected_df['title']
+)
+
+st.plotly_chart(fig, use_container_width=True)

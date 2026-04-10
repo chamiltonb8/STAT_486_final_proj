@@ -6,7 +6,7 @@ Can we predict which movies a user will like given what they have watched in the
 
 ### Logistics
 
-To do this, we will use Movie Ratings data to explore which movies people tend to like. Using various machine learning techniques, we will attempt to predict what users will rate a movie.
+To do this, we will use Movie Ratings data to explore which movies people tend to like. Using various machine learning techniques, we will attempt to predict what users will rate a movie. Specifically, our supervised learning target is the `rating` variable.
 
 In addition to raw predictions, we would like to use a Two Towers or an SVD recommender system to filter the massive amounts of data. This will help us to create a 'profile' for a user and obtain general movie recommendations for them. We will then use a regression or classification model to predict the user's rating.
 
