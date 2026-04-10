@@ -161,7 +161,7 @@ This analysis directly answers the core question:
 Yes — and the results show that incorporating learned representations dramatically improves predictive performance.
 
 ---
-
+ 
 ### Repository Evidence
 
 The code for the knn and logistic regression are found in `knn-and-logistic.ipynb` under the src/notebooks folders.
